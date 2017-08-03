@@ -1,0 +1,44 @@
+<div class="col-sm-6">
+<div class="alert alert-success" *ngIf="successMessage">
+{{successMessage}}
+</div>
+</div>
+<p>
+ Created New Employee
+</p>
+<div class="alert-danger col-sm-6" >
+<h3>
+  create employee
+</h3>
+    <form (ngSubmit)= "createEmployee()" [formGroup]="createForm">  
+
+        <div class="form-group"  [ngClass]="{'has-error':empNoError}">    
+
+         Employee Number:
+         
+         <input type="text" class="form-control" name="emp_no" 
+         formControlName="emp_no" required >    
+
+         <span class="help-block" *ngIf="empNoError">
+        {{empNoError}}
+         </span>  
+            
+      </div>
+      <div class="form-group">         
+         First Name:<input type="text" class="form-control" name="first_name"
+         formControlName="first_name">
+      </div>
+      <div class="form-group">         
+         Second Name:<input type="text" class="form-control" name="last_name"
+         formControlName="last_name">
+      </div>
+      <div class="form-group">         
+         City:<input type="text" class="form-control" name="city"
+         formControlName="city">
+      </div>
+     <div>         
+         <input type="submit" class="btn btn sm-info">
+      </div>
+    </form>
+</div>
+

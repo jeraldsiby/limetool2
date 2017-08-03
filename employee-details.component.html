@@ -1,0 +1,19 @@
+<h2>
+  employee-details page
+</h2>
+<!--EmployeeID : {{employeeId}}-->
+<!--this wont be displayed since the employeeId is changed and another object is imported 'employee'-->
+<div *ngIf="employee">
+<br>
+ Id : {{employee.id}}
+ <br>
+ FirstName : {{employee.first_name}}
+ <br>
+ LastName : {{employee.last_name}}
+ <br>
+ city : {{employee.city}}
+<br>
+ FullName : {{employee.fullname}}
+<br>
+<img [src]="employee.photo_url" alt="" class="thumbnail" />
+</div>

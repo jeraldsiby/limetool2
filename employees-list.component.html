@@ -1,0 +1,33 @@
+<a routerLink="/employees/create" class="btn btn-sm btn-info">
+Create New Employee 
+</a>
+
+<h3>
+  List of employees
+</h3>
+  
+
+    <table class="table table-border">
+     <tr >
+       <th> First name </th> 
+       <th> Last name </th>
+       <th> city </th>
+       <th> Actions </th>
+     </tr>
+     <tr *ngFor= "let employee of gridData">      
+          <td> {{employee.first_name}} </td>     
+          <!--fname changed to first_name to match with service object-->
+          <td> {{employee.last_name}} </td>
+           <td> {{employee.city}} </td>
+
+           <td>
+             <!--<a [routerLink]="['/employees', 123]" class="btn btn-sm btn-info"> //hardcoded-->
+              <!--dynamic-->
+               <a [routerLink]="['/employees',employee.id]" class="btn btn-sm btn-info"> 
+             View
+             </a>
+           </td>
+     </tr>
+    </table>
+
+
